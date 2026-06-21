@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RBP</title>
+<title>RBP Electrical</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,8 +14,10 @@
 <nav>
 
     <div class="logo">
-        <img src="https://picsum.photos/100" alt="Logo">
-        <h2>RBP Electrical</h2>
+        <a href="index.html">
+            <img src="assets/logos/white_icon.png" alt="RBP Electrical Icon">
+            <img src="assets/logos/white_textlogo.png" alt="RBP Electrical">
+        </a>
     </div>
     <button class="hamburger" id="hamburger">
         ☰
@@ -67,32 +70,38 @@
 
 <!-- HERO -->
 <section class="hero">
+    
+    <video class="hero-video" autoplay muted playsinline loop>
+        <source src="assets/videos/hero.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
-        <h1>Sample Hero Heading</h1>
-        <p>
-            Sample Hero Description - Marketing
-        </p>
+        <h1>Quality workmanship. Safe installations. Trusted results.</h1>
+        <!-- <p>Sample Hero Description - Marketing</p> -->
         <a href="#" class="hero-btn">Learn More</a>
     </div>
+
 </section>
 
 <!-- CATEGORIES -->
 <section class="categories">
 
-    <h2 class="section-title">Browse Categories</h2>
+    <!-- <h2 class="section-title">Browse Categories</h2> -->
 
     <div class="card-grid">
 
         <!-- Category 1 -->
         <div class="category-card">
             <div class="image-wrapper">
-                <img src="https://picsum.photos/600/800?random=1">
+                <img src="assets/category-cards/battery-black-background.png">
             </div>
 
             <div class="card-overlay"></div>
 
             <div class="card-info">
-                <h3>Category One</h3>
+                <h3>Solar/Battery</h3>
                 <p>Sample description</p>
             </div>
 
@@ -102,13 +111,13 @@
         <!-- Category 2 -->
         <div class="category-card">
             <div class="image-wrapper">
-                <img src="https://picsum.photos/600/800?random=2">
+                <img src="assets/category-cards/residential.jpg">
             </div>
 
             <div class="card-overlay"></div>
 
             <div class="card-info">
-                <h3>Category Two</h3>
+                <h3>Residential</h3>
                 <p>Sample description</p>
             </div>
 
@@ -118,13 +127,13 @@
         <!-- Category 3 -->
         <div class="category-card">
             <div class="image-wrapper">
-                <img src="https://picsum.photos/600/800?random=3">
+                <img src="assets/category-cards/commercial.jpg">
             </div>
 
             <div class="card-overlay"></div>
 
             <div class="card-info">
-                <h3>Category Three</h3>
+                <h3>Commercial</h3>
                 <p>Sample description</p>
             </div>
 
@@ -134,146 +143,184 @@
         <!-- Category 4 -->
         <div class="category-card">
             <div class="image-wrapper">
-                <img src="https://picsum.photos/600/800?random=4">
+                <img src="assets/category-cards/civil.jpg">
             </div>
 
             <div class="card-overlay"></div>
 
             <div class="card-info">
-                <h3>Category Four</h3>
+                <h3>Civil</h3>
                 <p>Sample description</p>
             </div>
 
             <div class="arrow-btn"><span>></span></div>
         </div>
 
-        <!--
-        Each category can be easily duplicated using the same structure as above
-
+        <!-- Category 5 -->
         <div class="category-card">
-            ...
+            <div class="image-wrapper">
+                <img src="assets/category-cards/security.jpg">
+            </div>
+
+            <div class="card-overlay"></div>
+
+            <div class="card-info">
+                <h3>Security</h3>
+                <p>Sample description</p>
+            </div>
+
+            <div class="arrow-btn"><span>></span></div>
         </div>
-        -->
+
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+
+    <div class="why-us-inner">
+
+        <div class="why-text">
+            <h2>Trusted Electrical Contractors in Brisbane</h2>
+            <p>
+                We deliver safe, high-quality electrical solutions for homes, businesses,
+                and large-scale projects. Fully licensed, insured, and committed to workmanship
+                that lasts.
+            </p>
+
+            <div class="why-points">
+
+                <div class="point">
+                    <h3>✔ Licensed & Insured</h3>
+                    <p>Qualified electricians you can trust on every job.</p>
+                </div>
+
+                <div class="point">
+                    <h3>✔ Fast Response</h3>
+                    <p>Quick turnaround for urgent and scheduled work.</p>
+                </div>
+
+                <div class="point">
+                    <h3>✔ Quality Guaranteed</h3>
+                    <p>We don’t cut corners — ever.</p>
+                </div>
+
+            </div>
+
+            <a href="#" class="hero-btn">Request a Quote</a>
+        </div>
+
+        <div class="why-image">
+            <img src="assets/images/electrician-work.jpg" alt="Electrician working">
+        </div>
 
     </div>
 
 </section>
-<!-- CATEGORIES CAROUSEL -->
-<section class="categories-carousel">
 
-    <h2 class="section-title">Sample Carousel Featured Categories</h2>
+<!-- RECENT PROJECTS -->
+<section class="projects-carousel">
+
+    <h2 class="section-title">Recent Projects</h2>
 
     <div class="carousel-wrapper">
 
-        <div class="carousel" id="carousel">
+        <div class="carousel" id="projectsCarousel">
 
-            <div class="category-card">
+            <!-- Project 1 -->
+            <div class="project-card">
                 <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/800?random=11">
+                    <img src="assets/projects/project1.jpg">
                 </div>
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <h3>Featured One</h3>
-                    <p>Sample description</p>
-                </div>
-      
-            </div>
 
-            <div class="category-card">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/800?random=12">
+                <div class="project-overlay"></div>
+
+                <div class="project-info">
+                    <h3>Recent 1</h3>
+                    <p>Description</p>
                 </div>
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <h3>Featured Two</h3>
-                    <p>Sample description</p>
-                </div>
-         
             </div>
 
-            <div class="category-card">
+            <!-- Project 2 -->
+            <div class="project-card">
                 <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/800?random=13">
+                    <img src="assets/projects/project2.jpg">
                 </div>
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <h3>Featured Three</h3>
-                    <p>Sample description</p>
+
+                <div class="project-overlay"></div>
+
+                <div class="project-info">
+                    <h3>Recent 2</h3>
+                    <p>Description</p>
                 </div>
-        
             </div>
 
-            <div class="category-card">
+            <!-- Project 3 -->
+            <div class="project-card">
                 <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/800?random=14">
+                    <img src="assets/projects/project3.jpg">
                 </div>
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <h3>Featured Four</h3>
-                    <p>Sample description</p>
+
+                <div class="project-overlay"></div>
+
+                <div class="project-info">
+                    <h3>Recent 3</h3>
+                    <p>Description</p>
                 </div>
-         
-            </div>
-            <div class="category-card">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/800?random=15">
-                </div>
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <h3>Featured Five</h3>
-                    <p>Sample description</p>
-                </div>
-            
-            </div>
-            <div class="category-card">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/800?random=16">
-                </div>
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <h3>Featured Six</h3>
-                    <p>Sample description</p>
-                </div>
-           
-            </div>
-            <div class="category-card">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/800?random=17">
-                </div>
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <h3>Featured Seven</h3>
-                    <p>Sample description</p>
-                </div>
-         
-            </div>
-            <div class="category-card">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/600/800?random=18">
-                </div>
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <h3>Featured Eight</h3>
-                    <p>Sample description</p>
-                </div>
-         
             </div>
 
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="image-wrapper">
+                    <img src="assets/projects/project4.jpg">
+                </div>
+
+                <div class="project-overlay"></div>
+
+                <div class="project-info">
+                    <h3>Recent 4</h3>
+                    <p>Description</p>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="image-wrapper">
+                    <img src="assets/projects/project4.jpg">
+                </div>
+
+                <div class="project-overlay"></div>
+
+                <div class="project-info">
+                    <h3>Recent 5</h3>
+                    <p>Description</p>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <div class="image-wrapper">
+                    <img src="assets/projects/project4.jpg">
+                </div>
+
+                <div class="project-overlay"></div>
+
+                <div class="project-info">
+                    <h3>Recent 6</h3>
+                    <p>Description</p>
+                </div>
+            </div>
 
         </div>
 
     </div>
+
     <div class="carousel-controls">
 
-            <button class="carousel-btn" onclick="scrollCarousel(-1)">
-                ‹
-            </button>
+        <button class="carousel-btn" onclick="scrollProjects(-1)">‹</button>
+        <button class="carousel-btn" onclick="scrollProjects(1)">›</button>
 
-            <button class="carousel-btn" onclick="scrollCarousel(1)">
-                ›
-            </button>
-
-        </div>
+    </div>
 
 </section>
 
@@ -390,7 +437,7 @@ function scrollCarousel(direction) {
 
     const cardWidth = card.offsetWidth + gap;
 
-    smoothScrollBy(carousel, direction * cardWidth, 500);
+    smoothScrollBy(carousel, direction * cardWidth * 2, 500);
 }
 
 /* smooth mouse wheel scroll */
@@ -401,6 +448,32 @@ if (carousel) {
         e.preventDefault();
 
         smoothScrollBy(carousel, e.deltaY * 1.2, 400);
+    }, { passive: false });
+}
+
+/* =========================
+   PROJECTS CAROUSEL CONTROL
+========================= */
+
+function scrollProjects(direction) {
+    const carousel = document.getElementById("projectsCarousel");
+
+    const card = carousel.querySelector(".project-card");
+    const style = getComputedStyle(carousel);
+
+    const gap = parseInt(style.gap || 0);
+    const cardWidth = card.offsetWidth + gap;
+
+    smoothScrollBy(carousel, direction * cardWidth * 2, 500);
+}
+
+/* wheel support */
+const projectsCarousel = document.getElementById("projectsCarousel");
+
+if (projectsCarousel) {
+    projectsCarousel.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        smoothScrollBy(projectsCarousel, e.deltaY * 1.2, 400);
     }, { passive: false });
 }
 </script>
