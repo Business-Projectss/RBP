@@ -8,15 +8,18 @@
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home">
 
 <!-- NAVIGATION -->
 <nav>
 
     <div class="logo">
         <a href="index.html">
-            <img src="assets/logos/white_icon.png" alt="RBP Electrical Icon">
-            <img src="assets/logos/white_textlogo.png" alt="RBP Electrical">
+            <img class="logo-icon logo-dark" src="assets/logos/base_icon.png" alt="RBP Electrical Icon">
+            <img class="logo-text logo-dark" src="assets/logos/base_textlogo.png" alt="RBP Electrical">
+
+            <img class="logo-icon logo-white" src="assets/logos/white_icon.png" alt="RBP Electrical Icon">
+            <img class="logo-text logo-white" src="assets/logos/white_textlogo.png" alt="RBP Electrical">
         </a>
     </div>
     <button class="hamburger" id="hamburger">
@@ -93,84 +96,94 @@
     <div class="card-grid">
 
         <!-- Category 1 -->
-        <div class="category-card">
-            <div class="image-wrapper">
-                <img src="assets/category-cards/battery-black-background.png">
+        <a href="solar-battery.html" class="category-link battery-card">
+            <div class="category-card">
+                <div class="image-wrapper">
+                    <img src="assets/category-cards/battery-black-background.png" alt="Solar/Battery">
+                </div>
+
+                <div class="card-overlay"></div>
+
+                <div class="card-info">
+                    <h3>Solar/Battery</h3>
+                    <p>Sample description</p>
+                </div>
+
+                <div class="arrow-btn"><span>&gt;</span></div>
             </div>
-
-            <div class="card-overlay"></div>
-
-            <div class="card-info">
-                <h3>Solar/Battery</h3>
-                <p>Sample description</p>
-            </div>
-
-            <div class="arrow-btn"><span>></span></div>
-        </div>
+        </a>
 
         <!-- Category 2 -->
-        <div class="category-card">
-            <div class="image-wrapper">
-                <img src="assets/category-cards/residential.jpg">
+         <a href="residential.html" class="category-link residential-card">
+            <div class="category-card">
+                <div class="image-wrapper">
+                    <img src="assets/category-cards/residential.jpg">
+                </div>
+
+                <div class="card-overlay"></div>
+
+                <div class="card-info">
+                    <h3>Residential</h3>
+                    <p>Sample description</p>
+                </div>
+
+                <div class="arrow-btn"><span>></span></div>
             </div>
-
-            <div class="card-overlay"></div>
-
-            <div class="card-info">
-                <h3>Residential</h3>
-                <p>Sample description</p>
-            </div>
-
-            <div class="arrow-btn"><span>></span></div>
-        </div>
+        </a>
 
         <!-- Category 3 -->
-        <div class="category-card">
-            <div class="image-wrapper">
-                <img src="assets/category-cards/commercial.jpg">
+        <a href="commercial.html" class="category-link commercial-card">
+            <div class="category-card">
+                <div class="image-wrapper">
+                    <img src="assets/category-cards/commercial.jpg">
+                </div>
+
+                <div class="card-overlay"></div>
+
+                <div class="card-info">
+                    <h3>Commercial</h3>
+                    <p>Sample description</p>
+                </div>
+
+                <div class="arrow-btn"><span>></span></div>
             </div>
-
-            <div class="card-overlay"></div>
-
-            <div class="card-info">
-                <h3>Commercial</h3>
-                <p>Sample description</p>
-            </div>
-
-            <div class="arrow-btn"><span>></span></div>
-        </div>
+        </a>
 
         <!-- Category 4 -->
-        <div class="category-card">
-            <div class="image-wrapper">
-                <img src="assets/category-cards/civil.jpg">
+        <a href="civil.html" class="category-link civil-card">
+            <div class="category-card">
+                <div class="image-wrapper">
+                    <img src="assets/category-cards/civil.jpg">
+                </div>
+
+                <div class="card-overlay"></div>
+
+                <div class="card-info">
+                    <h3>Civil</h3>
+                    <p>Sample description</p>
+                </div>
+
+                <div class="arrow-btn"><span>></span></div>
             </div>
-
-            <div class="card-overlay"></div>
-
-            <div class="card-info">
-                <h3>Civil</h3>
-                <p>Sample description</p>
-            </div>
-
-            <div class="arrow-btn"><span>></span></div>
-        </div>
+        </a>
 
         <!-- Category 5 -->
-        <div class="category-card">
-            <div class="image-wrapper">
-                <img src="assets/category-cards/security.jpg">
+        <a href="security.html" class="category-link security-card">
+            <div class="category-card">
+                <div class="image-wrapper">
+                    <img src="assets/category-cards/security.jpg">
+                </div>
+
+                <div class="card-overlay"></div>
+
+                <div class="card-info">
+                    <h3>Security</h3>
+                    <p>Sample description</p>
+                </div>
+
+                <div class="arrow-btn"><span>></span></div>
             </div>
-
-            <div class="card-overlay"></div>
-
-            <div class="card-info">
-                <h3>Security</h3>
-                <p>Sample description</p>
-            </div>
-
-            <div class="arrow-btn"><span>></span></div>
-        </div>
+        </a>
 
     </div>
 </section>
@@ -330,15 +343,15 @@
     <div class="footer-container">
 
         <div class="footer-column">
-            <h3>Sample Company</h3>
+            <h3>RBP Electrical</h3>
             <p>
-                Sample Company Description.
+                Civil Solar Security
             </p>
         </div>
 
         <div class="footer-column">
             <h3>Quick Links</h3>
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
             <a href="#">Products</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
@@ -361,7 +374,7 @@
     </div>
 
     <div class="copyright">
-        © 2026 Sample Company. All rights reserved.
+        © 2026 RBP Electrical. All rights reserved.
     </div>
 
 </footer>
@@ -476,6 +489,19 @@ if (projectsCarousel) {
         smoothScrollBy(projectsCarousel, e.deltaY * 1.2, 400);
     }, { passive: false });
 }
+
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
 </script>
 </body>
 </html>

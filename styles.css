@@ -29,16 +29,69 @@ body {
 /* =========================
    NAVIGATION
 ========================= */
+/* Home starts transparent */
+body.home nav {
+    background: transparent;
+    border-bottom-color: transparent;
+}
+
+/* Home starts with dark logo */
+body.home .logo-dark {
+    display: block;
+}
+
+body.home .logo-white {
+    display: none;
+}
+
+/* Home starts with dark text */
+body.home .dropdown button {
+    color: #111;
+}
+
+/* Home after scrolling */
+body.home nav.scrolled {
+    background: #070707;
+    border-bottom-color: #222;
+}
+
+body.home nav.scrolled .logo-dark {
+    display: none;
+}
+
+body.home nav.scrolled .logo-white {
+    display: block;
+}
+
+body.home nav.scrolled .dropdown button {
+    color: white;
+}
+
 nav {
     height: 80px;
     background: #070707;
     border-bottom: 1px solid #222;
+
     display: flex;
     align-items: center;
     padding: 0 40px;
-    position: sticky;
+
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+
     z-index: 100;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease;
+}
+
+
+nav.scrolled {
+    background: #070707;
+    border-bottom-color: #222;
 }
 
 .logo h2 {
@@ -52,23 +105,40 @@ nav {
 }
 
 .logo a {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 12px; 
-    text-decoration: none;
+    gap: 12px;
 }
-/* Icon Logo */
-.logo a img:first-child {
-    height: 36px; 
+
+/* Default (internal pages) */
+.logo-dark {
+    display: none;
 }
-/* Text Logo */
-.logo a img:last-child {
-    height: 40px; 
-}
-.logo img {
-    height: 40px; 
-    width: auto;
+
+.logo-white {
     display: block;
+}
+
+.dropdown button {
+    color: white;
+}
+/* After scroll */
+nav.scrolled .logo-dark {
+    display: none;
+}
+
+nav.scrolled .logo-white {
+    display: block;
+}
+.logo-icon {
+    height: 36px;
+    width: auto;
+}
+
+.logo-text {
+    height: 40px;
+    width: auto;
 }
 
 .nav-center {
@@ -97,10 +167,13 @@ nav {
     position: relative;
 }
 
+body.internal .dropdown button {
+    color: white;
+}
 .dropdown button {
     background: none;
     border: none;
-    color: white;
+    color: #111;
     cursor: pointer;
 
     display: flex;
@@ -109,6 +182,10 @@ nav {
 
     font-size: 15px;
     font-weight: 300;
+}
+
+nav.scrolled .dropdown button {
+    color: white;
 }
 
 .dropdown button:hover {
@@ -140,6 +217,59 @@ nav {
 .dropdown-content a:hover {
     background: #242424;
 }
+/* =========================
+   HOME SCROLL - FULL NAV THEME SWITCH
+========================= */
+/* HOME (NOT SCROLLED) dropdown = transparent */
+body.home nav:not(.scrolled) .dropdown-content {
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+}
+
+/* Dropdown background changes on scroll */
+body.home nav.scrolled .dropdown-content {
+    background: #0f0f0f;
+    border-color: #222;
+}
+
+/* Dropdown links */
+body.home .dropdown-content a {
+    color: #111; /* default (home unscrolled) */
+}
+
+/* After scroll → dropdown links become white */
+body.home nav.scrolled .dropdown-content a {
+    color: white;
+    
+}
+
+/* Hover state changes depending on scroll */
+body.home .dropdown-content a:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+body.home nav.scrolled .dropdown-content a:hover {
+    background: #1c1c1c;
+}
+
+/* Optional: dropdown button hover consistency */
+body.home .dropdown button:hover {
+    color: #ff7b00;
+}
+
+body.home nav.scrolled .dropdown button:hover {
+    color: #ff7b00;
+}
+
+/* MOBILE MENU (nav-center) theme switch */
+body.home .nav-center {
+    background: transparent;
+}
+
+body.home nav.scrolled .nav-center {
+    background: #070707;
+}
 
 
 
@@ -147,6 +277,8 @@ nav {
    HERO
 ========================= */
 .hero {
+    margin-top: 0;
+    
     position: relative;
     height: 700px;
     overflow: hidden;
@@ -233,73 +365,90 @@ nav {
     grid-template-rows: 320px 320px;
     gap: 25px;
 }
+.category-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+/* =========================
+   GRID LAYOUT (CLASS BASED)
+========================= */
+
+.category-link {
+    display: block;
+}
 
 /* Large featured card */
-.card-grid .category-card:nth-child(1) { 
+.battery-card {
     grid-column: 1;
     grid-row: 1 / span 2;
 }
 
-/* Top right cards */
-.card-grid .category-card:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.card-grid .category-card:nth-child(3) {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-/* Bottom wide cards */
-.card-grid .category-card:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.card-grid .category-card:nth-child(5) {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-
-.card-grid .category-card:nth-child(1) h3 {
+.battery-card .card-info h3 {
     font-size: 2.2rem;
 }
 
-.card-grid .category-card:nth-child(1) p {
+.battery-card .card-info p {
     font-size: 1rem;
 }
 
-.card-grid .category-card:nth-child(1) .card-info {
+.battery-card .card-info {
     left: 35px;
     bottom: 35px;
 }
 
-/* ===Card Positioning=== */
+/* Top right cards */
+.residential-card {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.commercial-card {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* Bottom row */
+.civil-card {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.security-card {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/* =========================
+   IMAGE POSITIONING (CLASS BASED)
+========================= */
+
 /* Battery */
-.card-grid .category-card:nth-child(1) img {
+.battery-card img {
     transform: scale(1.3);
     object-position: 330% 50%;
 }
 
 /* Residential */
-.card-grid .category-card:nth-child(2) img {
-    transform: scale(1.0);
+.residential-card img {
+    transform: scale(1);
     object-position: 300% 50%;
 }
+
 /* Commercial */
-.card-grid .category-card:nth-child(3) img {
-    transform: scale(1.0);
-    object-position:50% 100%;
+.commercial-card img {
+    transform: scale(1);
+    object-position: 50% 100%;
 }
+
 /* Civil */
-.card-grid .category-card:nth-child(4) img {
+.civil-card img {
     transform: scale(1.4);
-    object-position:100% 100%;
+    object-position: 100% 100%;
 }
+
 /* Security */
-.card-grid .category-card:nth-child(5) img {
+.security-card img {
     transform: scale(1.4);
     object-position: 50% 0%;
 }
@@ -321,7 +470,7 @@ nav {
 }
 
 .category-card {
-    min-height: 320px;
+    height: 100%;
 }
 
 .image-wrapper img {
@@ -331,8 +480,29 @@ nav {
     transition: transform .5s ease;
 }
 
-.category-card:hover img {
-    transform: scale(1.12);
+/* Battery */
+.battery-card:hover img {
+    transform: scale(1.3) scale(1.08);
+}
+
+/* Residential */
+.residential-card:hover img {
+    transform: scale(1) scale(1.08);
+}
+
+/* Commercial */
+.commercial-card:hover img {
+    transform: scale(1) scale(1.08);
+}
+
+/* Civil */
+.civil-card:hover img {
+    transform: scale(1.4) scale(1.08);
+}
+
+/* Security */
+.security-card:hover img {
+    transform: scale(1.4) scale(1.08);
 }
 
 .card-info {
@@ -686,6 +856,430 @@ footer {
     cursor: pointer;
 }
 
+/* ========================
+   SOLARY BATTERY PAGE
+========================= */
+.solar-hero {
+    background: url("assets/solar-hero.jpg") center/cover no-repeat;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.hero-btn.secondary {
+    background: transparent;
+    border: 2px solid white;
+}
+
+/* Trust Section */
+.trust-section {
+    max-width: 1200px;
+    margin: -60px auto 80px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    background: #111111;
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.12);
+}
+
+.trust-item {
+    padding: 35px;
+    text-align: center;
+    border: 1px solid #111111;
+}
+
+.trust-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.trust-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.trust-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.services-section,
+.why-section,
+.process-section,
+.cta-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.services-grid,
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Overview Section */
+.solar-overview{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 20px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.overview-image img{
+    width:100%;
+    border-radius:18px;
+    display:block;
+}
+
+.overview-content ul{
+    margin-top:30px;
+    display:grid;
+    gap:12px;
+}
+
+.service-card{
+    overflow:hidden;
+    border-radius:16px;
+    background:white;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.service-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+/* Why Us Section */
+
+.why-section {
+    background: #0b0b0b;
+    padding: 100px 20px;
+    border-radius: 20px;
+    color: white;
+}
+
+.why-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+.why-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.why-header h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.why-header p {
+    font-size: 1.05rem;
+    color: #b8b8b8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Cards */
+.why-card {
+    background: linear-gradient(145deg, #121212, #0e0e0e);
+    border: 1px solid #1f1f1f;
+    border-radius: 16px;
+    padding: 30px;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect */
+.why-card:hover {
+    transform: translateY(-6px);
+    border-color: #2a2a2a;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.why-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: #bdbdbd;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Optional accent line */
+.why-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff7b00, transparent);
+    opacity: 0.6;
+}
+
+/* Process Section*/
+
+.process-section {
+    background: var(--bg);
+    padding: 100px 20px;
+    color: var(--text);
+}
+
+.process-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+.process-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.process-header h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.process-header p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Steps layout */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Each step card */
+.process-step {
+    display: flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform .25s ease, border-color .25s ease;
+
+    /* NEW: taller cards */
+    min-height: 200px;
+}
+
+
+/* Hover effect */
+.process-step:hover {
+    transform: translateY(-4px);
+    border-color: #333;
+}
+
+/* Image */
+.process-image {
+    flex: 1;
+    min-width: 50%;
+    height: auto;
+    position: relative;
+}
+
+.process-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.process-step:hover .process-image img {
+    transform: scale(1.05);
+}
+
+/* Content */
+.process-content {
+    flex: 1;
+    min-width: 50%;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.step-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.process-content h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.process-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.process-step:hover {
+    transform: translateY(-6px);
+    border-color: #333;
+}
+.process-step:hover .process-image img {
+    transform: scale(1.06);
+}
+
+/* 
+   CTA Section
+ */
+
+.cta-section {
+    padding: 120px 20px;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-container {
+    max-width: 850px;
+    text-align: center;
+
+    background: linear-gradient(145deg, #121212, #0d0d0d);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    padding: 70px 40px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle top glow line */
+.cta-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--orange), transparent);
+    opacity: 0.8;
+}
+
+/* Heading */
+.cta-container h2 {
+    font-size: 2.6rem;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+/* Paragraph */
+.cta-container p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 35px;
+    line-height: 1.6;
+}
+
+/* Button */
+.cta-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+
+    background: var(--orange);
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 25px rgba(255, 123, 0, 0.25);
+}
+
+/* hover */
+.cta-btn:hover {
+    background: var(--orange-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 123, 0, 0.35);
+}
+
+/* responsive */
+@media (max-width: 600px) {
+    .cta-container {
+        padding: 50px 25px;
+    }
+
+    .cta-container h2 {
+        font-size: 2rem;
+    }
+}
+
 /* Tablet + Mobile */
 @media (max-width: 900px) {
 
@@ -803,14 +1397,53 @@ footer {
 
     /* Categories */
 
-    .categories {
-        margin: 50px auto;
+    .card-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 15px;
     }
 
-    .card-grid .category-card:nth-child(1) img {
-        transform: scale(1.0); 
-        object-position: 200% center; 
+    /* IMPORTANT: reset the grid positioning properly */
+    .battery-card,
+    .residential-card,
+    .commercial-card,
+    .civil-card,
+    .security-card {
+        grid-column: auto !important;
+        grid-row: auto !important;
     }
+    .battery-card .card-info {
+        left: 20px;
+        bottom: 20px;
+    }
+    .battery-card .card-info h3 {
+        font-size: 1.25rem;
+}
+
+    /* Make sure links + cards stretch full width */
+    .category-link {
+        width: 100%;
+    }
+
+    .category-card {
+        width: 100%;
+        min-height: 220px; /* prevents squashing */
+    }
+
+    /* Let images behave naturally */
+    .image-wrapper {
+        height: 100%;
+        min-height: 220px;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: none !important; /* prevents weird scaling issues on mobile */
+    }
+    
 
     .image-wrapper {
         height: 250px;
@@ -825,6 +1458,29 @@ footer {
     .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    /* =========================
+        Solar Battery Page 
+    =========================*/
+    /* Why Us */
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-header h2 {
+        font-size: 2rem;
+    }
+
+    /* Process Section */
+    .process-step {
+        flex-direction: column;
+    }
+
+    .process-image {
+        width: 100%;
+        flex: unset;
+        height: 220px;
     }
 }
 
