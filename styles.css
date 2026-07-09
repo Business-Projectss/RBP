@@ -133,17 +133,29 @@ nav.scrolled .logo-white {
     display: block;
 }
 
-.logo img {
-    height: 150px; 
+/* Individual logo sizing */
+.logo-icon {
+    height: 70px;
     width: auto;
     display: block;
     transition: height .3s ease;
 }
 
-nav.scrolled .logo img {
-    height: 75px;
+.logo-text {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: height .3s ease;
 }
 
+/* Scroll state */
+nav.scrolled .logo-icon {
+    height: 60px;
+}
+
+nav.scrolled .logo-text {
+    height: 40px;
+}
 .nav-center {
     position: absolute;
     left: 50%;
@@ -228,14 +240,20 @@ body.internal .logo-white {
     display: block;
 }
 
-body.internal .logo img {
-    height: 75px;
+body.internal .logo-icon {
+    height: 60px;
+}
+body.internal .logo-text {
+    height: 40px;
 }
 
 body.internal .nav-center a {
     color: white;
 }
 
+body.internal .nav-center a:hover {
+    color: var(--red);
+}
 body.internal .nav-phone a {
     color: white;
 }
@@ -359,7 +377,7 @@ nav.scrolled .phone-circle {
 
 .hero h1 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     font-weight: 600;
     letter-spacing: -1px;
