@@ -349,6 +349,14 @@ nav.scrolled .phone-circle {
     z-index: 2;
     max-width: 1200px;
     padding: 20px;
+
+    transform: translateY(0);
+    transition: transform .20s ease;
+}
+
+/* Move hero text down once the nav is visible */
+body.home nav.scrolled ~ .hero .home-hero-content {
+    transform: translateY(50px);
 }
 
 .hero h1 {
